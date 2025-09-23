@@ -63,7 +63,7 @@ const Sidebar = () => {
         {isMobile && (
           <button
             onClick={toggleMenu}
-            className="p-2 bg-white rounded-md shadow-md text-gray-600 hover:text-gray-800"
+            className="p-2 bg-white rounded-md border-gray-200 border text-gray-600 hover:text-gray-800"
           >
             <MenuOutlined style={{ fontSize: "20px" }} />
           </button>
@@ -79,7 +79,7 @@ const Sidebar = () => {
           <div className="p-4 text-center flex items-center gap-4">
             <button
               onClick={toggleMenu}
-              className="p-2 bg-white rounded-md shadow-md text-gray-600 hover:text-gray-800"
+              className="p-2 bg-white rounded-md  text-gray-600 hover:text-gray-800"
             >
               <MenuOutlined style={{ fontSize: "20px" }} />
             </button>

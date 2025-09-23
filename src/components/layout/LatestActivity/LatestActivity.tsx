@@ -3,7 +3,7 @@ import { Card, Timeline } from "antd";
 
 const LatestActivity = () => {
   return (
-    <Card title="Latest Activity" className="p-4 bg-red-400 h-[340px]  w-full   ">
+    <Card title="Latest Activity" className="p-4 bg-red-400 h-full  w-full   ">
       <p className="text-right text-gray-500 mb-2">Just now</p>
       <Timeline>
         <Timeline.Item color="green">Kevin Gilbert created 3 new events in Calendar with Urgent Label.</Timeline.Item>

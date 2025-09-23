@@ -26,7 +26,7 @@ const Profile = () => {
   if (isError)
     return (
       <div className="text-red-500 text-center mt-10">
-        Error: {error?.message}
+        Error: {error as string}
       </div>
     );
 
@@ -54,7 +54,7 @@ const Profile = () => {
                   phone={data?.phone || "+1-202-555-0151"}
                 />
               </Col>
-              <Col xs={24} md={12} className="lg:w-1/2 ">
+              <Col xs={24} md={12} className="w-full lg:w-1/2">
                 <UserDetails
                   fullName={data?.name || "Kevin Gilbert"}
                   profession={data?.profession || "UI/UX Lead Designer"}

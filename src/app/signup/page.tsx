@@ -44,7 +44,7 @@ const SignUp = () => {
           "url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
       }}
     >
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md m-4">
         <h3 className="text-2xl font-semibold text-center mb-8">Register</h3>
         <Form
           form={form}

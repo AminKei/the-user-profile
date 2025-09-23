@@ -31,11 +31,11 @@ const Login = () => {
       setTimeout(() => {
         setShowSuccess(false);
         goToHome();
-      }, 2000); // 2 ثانیه نمایش موفقیت قبل از ریدایرکت
+      }, 1500); // 2 ثانیه نمایش موفقیت قبل از ریدایرکت
     }
     if (isError) {
       setShowError(true);
-      setTimeout(() => setShowError(false), 2000); // 2 ثانیه نمایش خطا
+      setTimeout(() => setShowError(false), 4000); // 2 ثانیه نمایش خطا
     }
   }, [isSuccess, isError, goToHome]);
 
@@ -49,7 +49,7 @@ const Login = () => {
           "url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
       }}
     >
-      <div className="w-full max-w-md bg-white bg-opacity-90 p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-md bg-white bg-opacity-90 p-8 m-4 rounded-lg shadow-md">
         <h3 className="text-2xl font-semibold text-center mb-6">Login</h3>
         <Form
           form={form}

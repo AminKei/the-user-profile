@@ -1,6 +1,6 @@
 "use client";
-import { Card, Avatar, Row, Col, Typography } from "antd";
-const { Text, Title } = Typography;
+import { Avatar, Row, Col, Typography } from "antd";
+const { Text } = Typography;
 
 const ProfileHeader = ({ name, title, avatar, bio }) => {
   return (
@@ -12,7 +12,6 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
         marginBottom: "4vh",
       }}
     >
-      {/* پس‌زمینه استوک - همانند کد اصلی */}
       <div
         aria-hidden="true"
         style={{
@@ -28,7 +27,6 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
 
       <div
         style={{
-          display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
@@ -47,21 +45,20 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
         </div>
 
         <Row className="flex items-center justify-between w-full h-[100px]">
-          <Col className="flex mt-32 ml-52">
+          <Col className="flex mt-36 ml-52">
             <Typography>
-              <Title
-                level={3}
+              <p
                 style={{ margin: 0 }}
-                className="first-letter:uppercase"
+                className="first-letter:uppercase  lg:text-2xl text-sm font-bold  "
               >
                 {name || "Kevin Gilbert"}
-              </Title>
+              </p>
               <Text style={{ display: "block" }}>
                 {title || "Software Engineer"}
               </Text>
             </Typography>
           </Col>
-          <div className=" flex items-center justify-between gap-10 mr-28 top-[55%] relative">
+          <div className="  items-center justify-center gap-10 mr-36 top-[70%] relative lg:flex none text-sm lg:text-3xl">
             <Col xs={24} sm={8}>
               <div style={{ textAlign: "left" }}>
                 <Text strong style={{ fontSize: 22 }}>
@@ -69,6 +66,16 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
                 </Text>
                 <Text type="secondary" style={{ display: "block" }}>
                   Total Balance
+                </Text>
+              </div>
+            </Col>
+            <Col xs={24} sm={8}>
+              <div style={{ textAlign: "left" }}>
+                <Text strong style={{ fontSize: 22 }}>
+                  3,475
+                </Text>
+                <Text type="secondary" style={{ display: "block" }}>
+                  Board Card
                 </Text>
               </div>
             </Col>
@@ -93,7 +100,6 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
               </div>
             </Col>
           </div>
-          {/* --- مقادیر عددی/قیمتی --- */}
         </Row>
       </div>
     </div>
