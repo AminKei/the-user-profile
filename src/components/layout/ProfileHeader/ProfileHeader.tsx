@@ -1,8 +1,20 @@
 "use client";
 import { Avatar, Row, Col, Typography } from "antd";
+import React from "react";
 const { Text } = Typography;
 
-const ProfileHeader = ({ name, title, avatar, bio }) => {
+interface ProfileHearderProps {
+  name: string;
+  title: string;
+  avatar: string;
+  bio: string;
+}
+
+const ProfileHeader: React.FC<ProfileHearderProps> = ({
+  name,
+  title,
+  avatar,
+}) => {
   return (
     <div
       style={{
@@ -22,7 +34,7 @@ const ProfileHeader = ({ name, title, avatar, bio }) => {
           backgroundImage:
             "url('https://images.unsplash.com/photo-1722855047139-457d7756f17a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
         }}
-        className="absolute left-0 top-0 right-0 rounded-tl-lg rounded-tr-lg"
+        className="absolute left-0 top-0 right-0 rounded-tl-lg rounded-tr-lg bg-cover bg-no-repeat"
       />
 
       <div

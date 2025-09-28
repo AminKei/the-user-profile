@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Chart from "chart.js"; // ایمپورت Chart.js
+import  Chart from "chart.js"; // ایمپورت Chart.js
 const ActivityPieChart = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
 

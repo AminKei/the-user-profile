@@ -12,6 +12,14 @@ import UserEngagementChart from "@/components/layout/UserEngagementChart/UserEng
 import RecentTasks from "@/components/layout/RecentTasks/RecentTasks";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 import { Spin, Row, Col } from "antd";
+import KPICard, { KPIData } from "@/components/layout/KPICard/KPICard";
+
+const kpis: KPIData[] = [
+  { id: "1", title: "Profile Views", value: 1280, change: 8.4 },
+  { id: "2", title: "Sessions", value: 540, change: 5.2 },
+  { id: "3", title: "Tasks Completed", value: 320, change: 12.1 },
+  { id: "4", title: "New Messages", value: 75, change: 3.9 },
+];
 
 const Profile = () => {
   useAuthGuard();
@@ -39,10 +47,9 @@ const Profile = () => {
           <div className="w-full  mx-auto">
             <ProfileHeader
               name={data?.name || "Kevin Gilbert"}
-              title={data?.title || "Software Engineer"}
+              title={"Software Engineer"}
               avatar={data?.avatar || "https://via.placeholder.com/128"}
               bio={
-                data?.bio ||
                 "About Me Suspendisse laculis tortor tortor, ac convallis quam dictum mattis. Integer leo ex, cursus et elit..."
               }
             />
@@ -51,15 +58,15 @@ const Profile = () => {
                 <ContactInfo
                   address={""}
                   email={data?.email || "info@kevin.com"}
-                  phone={data?.phone || "+1-202-555-0151"}
+                  phone={"+1-202-555-0151"}
                 />
               </Col>
               <Col xs={24} md={12} className="w-full lg:w-1/2">
                 <UserDetails
                   fullName={data?.name || "Kevin Gilbert"}
-                  profession={data?.profession || "UI/UX Lead Designer"}
-                  team={data?.team || "UI/UX Designer"}
-                  dob={data?.dob || "25 Nov, 1983"}
+                  profession={"UI/UX Lead Designer"}
+                  team={"UI/UX Designer"}
+                  dob={"25 Nov, 1983"}
                 />
               </Col>
             </div>
@@ -75,11 +82,29 @@ const Profile = () => {
               <Col xs={24} lg={12}>
                 <RecentTasks />
               </Col>
-
-              <Col xs={24}>
+            </Row>
+            <div className="lg:flex grid w-full justify-between mt-4">
+              <Col className="lg:w-2/3 w-full">
                 <LatestActivity />
               </Col>
-            </Row>
+              <Col className="lg:w-1/3 w-full gap-3 lg:ml-4 ml-0  lg:mt-0 mt-4 justify-center grid ">
+                <Row gutter={[20, 20]}>
+                  {kpis.map((k) => (
+                    <Col key={k.id} className="w-1/2 ">
+                      <KPICard data={k} />
+                    </Col>
+                  ))}
+                </Row>
+
+                <Row gutter={[20, 20]}>
+                  {kpis.slice(2, 4).map((k) => (
+                    <Col key={k.id} className="w-1/2 ">
+                      <KPICard data={k} />
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+            </div>
           </div>
         </div>
       </div>

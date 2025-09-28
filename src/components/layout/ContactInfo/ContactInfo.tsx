@@ -1,8 +1,15 @@
 "use client";
 import { Card, Row, Col, Typography } from "antd";
+import React from "react";
 const { Text } = Typography;
 
-const ContactInfo = ({ email, phone, address }) => {
+interface ContaentProps {
+  email: string;
+  phone: string;
+  address: string;
+}
+
+const ContactInfo: React.FC<ContaentProps> = ({ email, phone }) => {
   return (
     <Card title="Info">
       <Row gutter={[16, 16]}>

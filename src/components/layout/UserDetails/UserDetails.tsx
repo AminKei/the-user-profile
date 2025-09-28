@@ -1,8 +1,15 @@
 "use client";
 import { Card, Row, Col, Typography } from "antd";
+import React from "react";
 const { Text } = Typography;
 
-const UserDetails = ({ fullName, profession, team, dob }) => {
+interface UserDatelistProps {
+  fullName: string;
+  profession: string;
+  team: string;
+  dob: string;
+}
+const UserDetails:React.FC<UserDatelistProps> = ({ fullName, profession, team, dob }) => {
   return (
     <Card title="User Details">
       <Row gutter={[16, 16]}>
